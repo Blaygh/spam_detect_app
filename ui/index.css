@@ -1,0 +1,66 @@
+
+/* make the body look glassy */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url(//wallpapercave.com/wp/wp7883320.jpg);
+    background-color: #e7f6fb;
+    color: crimson;
+}
+nav {
+    background-color: #5c5757;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#intro {
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#intro h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+#main{
+    display: flex;
+    justify-content: center;
+}
+#input-main{
+    display: flex;
+    background: rgba(91, 91, 91, 1); 
+    box-shadow: 0 4px 6px rgba(12, 6, 6, 0.5); /* Box shadow for a frosted glass effect */
+    padding: 10px;
+    margin: 2em;
+    border-radius: 2px;
+    justify-content: center;
+    width: 50%;
+    
+}
+
+#form {
+    justify-content: center;
+    padding: 10px;
+    margin: 2em;
+}
+
+
