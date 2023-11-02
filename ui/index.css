@@ -1,13 +1,26 @@
 
 /* make the body look glassy */
 
-body {
+.body_norm {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-image:url(//wallpapercave.com/wp/wp7883320.jpg);
     background-color: #e7f6fb;
-    color: crimson;
+    color: rgb(214, 200, 203);
+    transition: all;
+    transition-duration: 2s;
 }
+
+.body_spam{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url(https://th.bing.com/th/id/OIP.uOLsZARTmcTp8lnG2c84WQHaEK?pid=ImgDet&rs=1);
+    background-color: #e7f6fb;
+    color: crimson;
+    transition: all;
+    transition-duration: 3s;
+}
+/* Style the header */
 nav {
     background-color: rgba(12, 6, 6, 0.5);
     overflow: hidden;
@@ -46,7 +59,7 @@ nav a:hover {
     justify-content: center;
 }
 
-#input-main{
+.input-main{
     display: flex;
     background: rgba(172, 159, 159, 0.2); 
     box-shadow: 0 4px 6px rgba(215, 211, 211, 0.2); /* Box shadow for a frosted glass effect */
@@ -56,6 +69,7 @@ nav a:hover {
     justify-content: center;
     width: 50%;
 }
+
 
 #form {
     display: flex;

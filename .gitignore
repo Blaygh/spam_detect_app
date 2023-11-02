@@ -1,2 +1,13 @@
 # FILEPATH: /path/to/spam_detect_app/.gitignore
 spam_venv/
+
+# ignore trained_model folder
+trained_model/
+
+# ignore __pycache__ folder
+__pycache__/
+
+
+
+
+

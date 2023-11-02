@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body id = 'body' class="body_norm" >
         <!-- Navigation bar -->
         <nav>
             <a href="#">Home</a>
@@ -23,16 +23,17 @@
 
         <!--text input -->
         <div id = 'main'>
-            <div id = 'input-main'>
+            <div class = 'input-main'>
                 <form id = 'form'>
                     <label class = 'label' for="spam">Spam or Not?Find out:</label>
-                    <input class = 'text-input' type="text"  name="spam" placeholder="Type in text here">
-                    <input class = 'input-button' type="submit" value="Enter">
+                    <input id = 'input' class = 'text-input' type="text"  name="spam" placeholder="Type in text here">
+                    <input id = 'input-btn' class = 'input-button' type="submit" value="Enter">
                 </form>
             </div>
 
 
 </body>
+<script src="script.js"></script>
 </html>
 
 

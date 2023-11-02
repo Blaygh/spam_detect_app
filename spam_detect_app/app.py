@@ -8,7 +8,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
-EPOCHS = 1
+EPOCHS = 3
 
 def embed_text_bert(spam_data):
     '''returns the pooled output of embedded input'''
