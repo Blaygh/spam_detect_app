@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import util
 from flask_cors import CORS
+import json
 
 
 
@@ -15,11 +16,14 @@ def predict():
     '''Performs prediction on the text input using the trained model.'''
 
     # Get the text input from the request
-    text = request.form.get('text')
-    print(f'{request.form.get("text")} formm') #debugging
+    data = json.loads(request.data)
+    text = data.get('text')
+
+
+    print(f'{text} formm') #debugging
 
     # Perform prediction on the text input using the trained model
-    if text is None:
+    if text == '':
         return jsonify({'error': 'no text provided'}), 400
     prediction = util.predict([text])
 
