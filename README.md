@@ -1,9 +1,11 @@
 ## Spam Detection with TensorFlow and BERT
 
-This project involves building a spam detection model using TensorFlow and the BERT (Bidirectional Encoder Representations from Transformers) model. The code is organized in the `spam_detect_app/app.py` file and containerized using Docker. The primary goal of this project is to create an API for spam detection, although it is a work in progress.
+![Homepage image](homepage.png)
+
+This project involves building a spam detection model using TensorFlow and the BERT (Bidirectional Encoder Representations from Transformers) model. The code is organized in the `spam_detect_app/app.py` file and containerized using Docker. The primary goal of this project is to create an API for spam detection, and it now includes a user-friendly UI for single text classification alongside the API.
 
 ### Overview
-Spam detection is a critical task in modern communication systems, and this codebase aims to utilize advanced natural language processing (NLP) techniques to identify and classify spam messages. The project consists of several key components:
+Spam detection is a critical task in modern communication systems, and this codebase utilizes advanced natural language processing (NLP) techniques to identify and classify spam messages. The project consists of several key components:
 
 1. **Data Loading and Preprocessing**: The code loads a dataset of preprocessed spam messages, which is essential for training and testing the spam detection model.
 
@@ -17,10 +19,12 @@ Spam detection is a critical task in modern communication systems, and this code
 
 6. **Training and Model Saving**: The model is trained with the provided data and saved for future use.
 
-7. **API and Testing**: While not yet fully implemented, the code includes some test data for verifying the functionality of the spam detection model. An API for spam detection is planned for future development.
+7. **API for Spam Detection**: The code now includes a fully implemented RESTful API for spam detection using Flask and Python. Users can send text messages to the API for spam classification.
+
+8. **User Interface (UI)**: In addition to the API, a user-friendly UI is provided for single text classification. Users can enter a text message, click a button, and get immediate spam classification results.
 
 ### Use and Development
-To use this code, follow these steps:
+To use this code:
 
 1. Load the dataset of preprocessed spam messages.
 2. Use the BERT-based embedding function to embed the text data.
@@ -28,12 +32,13 @@ To use this code, follow these steps:
 4. Split the data into training and testing sets.
 5. Build and train the spam detection model.
 6. Save the trained model for future use.
-7. Develop and implement the planned API for spam detection.
+7. Utilize the RESTful API for spam detection, where you can send text messages for classification.
+8. Enjoy the user-friendly UI for single text classification.
 
 Please note that the model creation and training in the current code are set to a small number of epochs for testing purposes. For practical use, you should train the model with more extensive data and hyperparameter tuning.
 
 ### Future Directions
-The codebase is intended to evolve into a complete API for spam detection, allowing users to submit text messages and receive spam classification results. Additional features and refinements will be made in subsequent development phases.
+The codebase now includes a completed API for spam detection and a user-friendly UI for single text classification. Additional features and refinements will be made in subsequent development phases. This project demonstrates the integration of deep learning techniques with a user interface and REST API to provide a comprehensive spam detection solution.
 
 #### References:
 - TensorFlow: https://www.tensorflow.org/
@@ -41,5 +46,7 @@ The codebase is intended to evolve into a complete API for spam detection, allow
 - BERT: https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4
 - TextVectorization: https://www.tensorflow.org/api_docs/python/tf/keras/layers/experimental/preprocessing/TextVectorization
 - LSTM: https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM
+- Flask: https://flask.palletsprojects.com/
+- Docker: https://www.docker.com/
 
-For more details and instructions on the API's usage, please refer to the project's documentation.
+For more details and instructions on the API and UI usage, please refer to the project's documentation.

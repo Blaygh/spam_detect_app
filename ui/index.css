@@ -11,10 +11,11 @@
     transition-duration: 2s;
 }
 
+/* the class of background when server returns spam */
 .body_spam{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image:url(https://th.bing.com/th/id/OIP.uOLsZARTmcTp8lnG2c84WQHaEK?pid=ImgDet&rs=1);
+    background-image:url(https://images.pexels.com/photos/1316484/pexels-photo-1316484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-color: #e7f6fb;
     color: crimson;
     transition: all;
@@ -70,6 +71,15 @@ nav a:hover {
     width: 50%;
 }
 
+/* card class when it returns spam */
+.input-main-spam{
+    background: rgba(65, 34, 34, 0.2); 
+    box-shadow: 0 4px 6px rgba(201, 23, 23, 0.2); /* Box shadow for a frosted glass effect */
+    transition: all;
+    transition-duration: 0.5s; 
+
+}
+
 
 #form {
     display: flex;
@@ -113,4 +123,19 @@ nav a:hover {
     cursor: pointer;
     transition: 0.2s;
 }
+
+
+/* Style the footer */
+footer {
+    background-color: rgba(12, 6, 6, 0.5);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width:320px){
+    
+}
+/* Path: ui/index.js */
 
