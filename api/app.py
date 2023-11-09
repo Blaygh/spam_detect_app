@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import util
 from flask_cors import CORS
 import json
+import numpy as np
 
 
 
@@ -11,9 +12,21 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/handshake')
+def index():
+    # Perform prediction on the text input using the trained model
+    prediction = util.predict(np.expand_dims(np.array('ham ham'), axis = 0))
+
+    if (prediction == 'ham'):
+        return jsonify({'test':'App and working'})
+    else:
+        return jsonify({'test':'System temporarily down'})
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     '''Performs prediction on the text input using the trained model.'''
+
 # error handling
     # if request.method != 'POST':
     #     return jsonify({'error': 'use POST method'}), 405
@@ -45,7 +58,7 @@ def predict():
     print(f'{text} formm') #debugging
 
     # Perform prediction on the text input using the trained model
-    prediction = util.predict([text])
+    prediction = util.predict(np.expand_dims(np.array(text), axis = 0))
 
     # Send back a response with the prediction
     response = jsonify({'prediction': prediction})
@@ -54,21 +67,7 @@ def predict():
 
     return response
 
-
-# error handling
-
-# @app.errorhandler(404)
-# def not_found(error):
-#     return jsonify({'error': 'not found'}), 404
-
-# @app.errorhandler(500)
-# def internal_server_error(error):
-#     return jsonify({'error': 'internal server error'}), 500
-
-# @app.errorhandler(400)
-# def bad_request(error):
-#     return jsonify({'error': 'bad request'}), 400
-    
+ 
 if __name__ == '__main__':
     util.load_data()
     util.vectorizer()

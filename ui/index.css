@@ -119,6 +119,12 @@ nav a:hover {
     box-shadow: 0 5px 15px 30px rgba(142, 54, 54, 0.9); /* Box shadow for a frosted glass effect */
 }
 
+.input-main-ham-shadow{
+    box-shadow: 0 5px 15px 20px rgba(9, 70, 105, 0.9); /* Box shadow for a frosted glass effect */
+    transition: all;
+    transition-duration: 0.2s; 
+}
+
 
 #form {
     display: flex;

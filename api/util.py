@@ -19,7 +19,7 @@ def load_data():
     global __trained_model
 
     print ('...loading data')
-    __spam_data = pd.read_csv('spam_detect_app/spam_preprocessed.csv')#development location is spam_detect_app/spam_preprocessed.csv
+    __spam_data = pd.read_csv('data/spam_preprocessed.csv')
     print ('...loading model')
     __trained_model = tf.keras.models.load_model('trained_model')
     print('load successfull')
@@ -40,6 +40,16 @@ def vectorizer():
 def predict(text):
     '''Performs prediction on the text input using the trained model.'''
 
+    if not isinstance(text, np.ndarray) or not all(isinstance(item, str) for item in text):
+        raise ValueError("Input 'text' must be a list of strings.")
+    
+    if __trained_model is None or __textVectorizer is None:
+        raise ValueError("Model or vectorizer not initialized. Call 'load_data' and 'vectorizer' functions first.")
+
+    if not text:
+        return ValueError("Input 'text' is empty.")
+
+
     embedded_text = __textVectorizer(text) #vectorize data
     embedded_text = tf.expand_dims(embedded_text, -1)
 
@@ -59,5 +69,4 @@ if __name__ == '__main__':
     print(prediction)
 
 # Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's
-
 

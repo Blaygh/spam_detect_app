@@ -10,13 +10,40 @@ const $input_card = $('#input-card')
 
 
 
+window.addEventListener("load", test);
+
+function test(){
+    fetch('http://127.0.0.1:5000/handshake', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).then(response => response.json())
+        .then(data => {
+            const{test} = data;
+            console.log(test);
+        }).catch(error=>{
+            console.error('Error', error);
+        });
+};
+
 
 $form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event) {
     event.preventDefault()
+    if (!value_check()) return
     getPrediction()
 }
+
+function value_check() {
+    if ($input.value == "") {
+        alert("Please enter some text in the input field");
+        return false;
+    }
+    return true;
+}
+
 
 function getPrediction() {
     const data = {
@@ -40,6 +67,8 @@ function getPrediction() {
             {
                 // call changeBackground()
                 changeBackground()
+            }else{
+                changeBackground_ham()
             };
 
         })
@@ -64,6 +93,21 @@ async function changeBackground() {
     $input_card.classList.remove('input-main-spam')
 
 }
+
+// // changing of background for ham
+
+async function changeBackground_ham() {
+
+    //for the blinkning effect on the input card
+    for (let i = 0; i < 4; i++) {
+        await new Promise(resolve => setTimeout(resolve, 300)); // Wait for 1/3 second
+        $input_card.classList.toggle('input-main-ham-shadow')
+
+    }
+
+}
+
+
 
 
 // changing of background
