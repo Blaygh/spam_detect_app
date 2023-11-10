@@ -19,9 +19,9 @@ Spam detection is a critical task in modern communication systems, and this code
 
 6. **Training and Model Saving**: The model is trained with the provided data and saved for future use.
 
-7. **API for Spam Detection**: The code now includes a fully implemented RESTful API for spam detection using Flask and Python. Users can send text messages to the API for spam classification.
+7. **API for Spam Detection**: The Spam Server is implemented as a fully functional RESTful API for spam detection using Flask and Python. Users can send text messages to the API for spam classification.
 
-8. **User Interface (UI)**: In addition to the API, a user-friendly UI is provided for single text classification. Users can enter a text message, click a button, and get immediate spam classification results.
+8. **User Interface (UI)**: In addition to the API, a user-friendly UI is provided for single text classification. Users can enter a text message, click a button, and get immediate spam classification results. The UI is deployed on Heroku at [https://spam-ui-d8fd22f15982.herokuapp.com/](https://spam-ui-d8fd22f15982.herokuapp.com/) and is also built with Flask.
 
 ### Use and Development
 To use this code:
