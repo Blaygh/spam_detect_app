@@ -11,16 +11,19 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
+spam_test_text = "Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's"
+
 
 @app.route('/handshake')
 def index():
     # Perform prediction on the text input using the trained model
-    prediction = util.predict(np.expand_dims(np.array('ham ham'), axis = 0))
+    prediction = util.predict(np.expand_dims(np.array(spam_test_text), axis = 0))
 
-    if (prediction == 'ham'):
-        return jsonify({'test':'App and working'})
+    if (prediction[0][0] == 'spam'):
+        return jsonify({'test':1})
     else:
-        return jsonify({'test':'System temporarily down'})
+        return jsonify({'test':0})
+    
 
 
 @app.route('/predict', methods=['POST'])

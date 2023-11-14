@@ -23,6 +23,12 @@ function test(){
         .then(data => {
             const{test} = data;
             console.log(test);
+            if (test == 1) {
+                console.log('App and running')
+            }else{
+                serverDown()
+                console.log('server down')
+            }
         }).catch(error=>{
             console.error('Error', error);
             serverDown()

@@ -40,8 +40,9 @@ def vectorizer():
 def predict(text):
     '''Performs prediction on the text input using the trained model.'''
 
-    if not isinstance(text, np.ndarray) or not all(isinstance(item, str) for item in text):
-        raise ValueError("Input 'text' must be a list of strings and of type ndarray.")
+    if not isinstance(text, np.ndarray):
+        print([type(item) for item in text])
+        raise ValueError("Input 'text' must be of type ndarray.")
     
     if __trained_model is None or __textVectorizer is None:
         raise ValueError("Model or vectorizer not initialized. Call 'load_data' and 'vectorizer' functions first.")
