@@ -12,7 +12,7 @@
         <!-- Navigation bar -->
         <nav>
             <a href="#">Home</a>
-            <a href="../README.md">About</a>
+            <a href="{{ url_for('static', filename='about.html') }}">About</a>
             <a href="#">Contact</a>
         </nav>
         
@@ -23,6 +23,10 @@
 
         <!--text input -->
         <div id = 'main'>
+            <div id = 'mypop-up' class = 'popup'>
+                <p id = 'result' class = 'result'> Server is down. Please try again later.</p>
+                <div><img src="https://images.pexels.com/photos/1560694/pexels-photo-1560694.jpeg" alt="server down"></div>
+            </div>
             <div id = input-card class = 'input-main'>
                 <form id = 'form'>
                     <label class = 'label' for="spam">Spam or Not?Find out:</label>
@@ -30,6 +34,7 @@
                     <input id = 'input-btn' class = 'input-button' type="submit" value="Enter">
                 </form>
             </div>
+            
 
 
 </body>

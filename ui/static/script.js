@@ -7,6 +7,7 @@ const $form = $('form')
 const $input = $('#input')
 const $body = $('#body')
 const $input_card = $('#input-card')
+const $popup = $('#mypop-up')
 
 
 
@@ -24,9 +25,16 @@ function test(){
             console.log(test);
         }).catch(error=>{
             console.error('Error', error);
+            serverDown()
+
         });
 };
 
+function serverDown(){
+    $popup.style.display = 'block'; 
+    $input_card.style.display = 'none';
+    console.log('server down');
+}
 
 $form.addEventListener('submit', handleSubmit)
 

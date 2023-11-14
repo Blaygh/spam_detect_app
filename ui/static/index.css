@@ -1,9 +1,13 @@
 /* image links
 credits from pexels.com
+////backgrounds///
 https://images.pexels.com/photos/216635/pexels-photo-216635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 https://images.pexels.com/photos/2015145/pexels-photo-2015145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 https://images.pexels.com/photos/8863347/pexels-photo-8863347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 https://images.pexels.com/photos/2928428/pexels-photo-2928428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+//SERVER DOWN IMAGE/
+https://th.bing.com/th/id/OIP.RbHSG6btsndjlh_NHykm4AHaHr?pid=ImgDet&rs=1
 */
 
 
@@ -179,11 +183,32 @@ footer {
     color: white;
 }
 
-/* @media screen and (max-width:760px){
+.popup {
+    display: none;
+    background-color: #704646;
+    position: absolute;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    padding: 0;
+    width: 30%;
+    height: 30%;
+    color: black;
+    font-weight: bold;
+    font-size:larger;
+    border-radius: 10px;
+  }
 
-} */
 
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+.popup img{
+    max-height: 1%;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* When the screen is less than 600px wide,
+stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width:490px){
 
 /* Style the links inside the navigation bar */
@@ -253,6 +278,30 @@ nav a {
     background-color: antiquewhite;
 }
 
+.popup {
+    display: none;
+    background-color: #704646;
+    position: absolute;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.1);
+    margin: 5% 0 0 0;
+    padding: 0 0 0 0;
+    width: 50%;
+    height: 30%;
+    color: black;
+    font-weight: bold;
+    font-size:smaller;
+    border-radius: 10px;
+  }
+
+
+.popup img{
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+  }
+  
 /* Path: ui/index.js */
 
 }

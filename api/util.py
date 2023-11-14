@@ -41,7 +41,7 @@ def predict(text):
     '''Performs prediction on the text input using the trained model.'''
 
     if not isinstance(text, np.ndarray) or not all(isinstance(item, str) for item in text):
-        raise ValueError("Input 'text' must be a list of strings.")
+        raise ValueError("Input 'text' must be a list of strings and of type ndarray.")
     
     if __trained_model is None or __textVectorizer is None:
         raise ValueError("Model or vectorizer not initialized. Call 'load_data' and 'vectorizer' functions first.")
@@ -65,7 +65,7 @@ def predict(text):
 if __name__ == '__main__':
     load_data()
     vectorizer()
-    prediction = predict(['Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C\'s apply 08452810075over18\'s'])
+    prediction = predict(np.expand_dims(np.array(["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C\'s apply 08452810075over18\'s"]), axis = 0))
     print(prediction)
 
 # Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's
